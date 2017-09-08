@@ -39,6 +39,7 @@
         android:textAlignment="center"
         android:textColor="@color/colorTextIcons"
         android:textSize="30sp"
+        android:textStyle="italic"
         android:id="@+id/appDescriptionTextView"
         android:background="@color/colorPrimary"
         android:alpha="0.9"

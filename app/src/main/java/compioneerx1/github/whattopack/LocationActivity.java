@@ -18,6 +18,7 @@ public class LocationActivity extends AppCompatActivity {
 
     @Bind(R.id.locationButton) Button mLocationButton;
     @Bind(R.id.locationEditText) EditText mLocationEditText;
+    @Bind(R.id.ideasButton) Button mIdeasButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +37,14 @@ public class LocationActivity extends AppCompatActivity {
                     intent.putExtra("location", location);
                     startActivity(intent);
                 }
+            }
+        });
+
+        mIdeasButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LocationActivity.this, IdeasActivity.class);
+                startActivity(intent);
             }
         });
 

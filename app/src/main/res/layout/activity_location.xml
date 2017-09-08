@@ -42,13 +42,24 @@
         />
 
     <Button
+        android:id="@+id/locationButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/locationButton"
-        android:layout_alignParentBottom="true"
+        android:layout_above="@+id/ideasButton"
         android:layout_centerHorizontal="true"
         android:background="@color/colorAccent"
         android:text="Where"
+        android:textColor="@color/colorTextIcons"
+        android:textSize="20dp" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/ideasButton"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:background="@color/colorDivider"
+        android:text="Need Ideas?"
         android:textColor="@color/colorTextIcons"
         android:layout_marginBottom="30dp"
         android:textSize="20dp"

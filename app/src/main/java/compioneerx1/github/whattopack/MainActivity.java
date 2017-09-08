@@ -11,6 +11,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import org.w3c.dom.Text;
+
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
@@ -19,9 +21,8 @@ public class MainActivity extends AppCompatActivity {
     public static final String TAG = MainActivity.class.getSimpleName();
 
     @Bind(R.id.appNameTextView) TextView mAppNameTextView;
+    //@Bind(R.id.appDescriptionTextView) TextView mAppDescriptionTextView;
     @Bind(R.id.startButton) Button mStartButton;
-//    @Bind(R.id.locationButton) Button mLocationButton;
-//    @Bind(R.id.locationEditText) EditText mLocationEditText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
         //Custom font text for "What To Pack"
         Typeface pacificoFont = Typeface.createFromAsset(getAssets(), "fonts/pacifico.ttf");
         mAppNameTextView.setTypeface(pacificoFont);
+        //mAppDescriptionTextView.setTypeface(pacificoFont);
 
         mStartButton.setOnClickListener(new View.OnClickListener() {
             @Override
