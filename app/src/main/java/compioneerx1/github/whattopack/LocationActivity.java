@@ -14,36 +14,33 @@ import android.widget.Toast;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-public class MainActivity extends AppCompatActivity {
+public class LocationActivity extends AppCompatActivity {
 
     public static final String TAG = MainActivity.class.getSimpleName();
 
-    @Bind(R.id.appNameTextView) TextView mAppNameTextView;
-    @Bind(R.id.startButton) Button mStartButton;
-//    @Bind(R.id.locationButton) Button mLocationButton;
-//    @Bind(R.id.locationEditText) EditText mLocationEditText;
+    //@Bind(R.id.appNameTextView) TextView mAppNameTextView;
+    @Bind(R.id.locationButton) Button mLocationButton;
+    @Bind(R.id.locationEditText) EditText mLocationEditText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_location);
         ButterKnife.bind(this);
 
         //Custom font text for "What To Pack"
-        Typeface pacificoFont = Typeface.createFromAsset(getAssets(), "fonts/pacifico.ttf");
-        mAppNameTextView.setTypeface(pacificoFont);
+//        Typeface pacificoFont = Typeface.createFromAsset(getAssets(), "fonts/pacifico.ttf");
+//        mAppNameTextView.setTypeface(pacificoFont);
 
-        mStartButton.setOnClickListener(new View.OnClickListener() {
+        mLocationButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //String location = mLocationEditText.getText().toString();
-                Intent intent = new Intent(MainActivity.this, LocationActivity.class);
-                //intent.putExtra("location", location);
+                String location = mLocationEditText.getText().toString();
+                Intent intent = new Intent(LocationActivity.this, DatesActivity.class);
+                intent.putExtra("location", location);
                 startActivity(intent);
             }
         });
 
     }
-
-
 }

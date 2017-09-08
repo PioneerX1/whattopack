@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/black"
-    tools:context="compioneerx1.github.whattopack.MainActivity">
+    tools:context="compioneerx1.github.whattopack.LocationActivity">
+
 
     <ImageView
         android:layout_width="wrap_content"
@@ -28,29 +28,27 @@
         android:id="@+id/appNameTextView"
         />
 
-    <TextView
+    <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:id="@+id/locationEditText"
+        android:background="@color/colorTextIcons"
+        android:hint="Enter Your Destination"
         android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:text="WhatToPack helps travelers plan for local weather conditions and pack accordingly"
-        android:textAlignment="center"
-        android:textColor="@color/colorTextIcons"
-        android:textSize="30sp"
-        android:id="@+id/appDescriptionTextView"
+        android:padding="5dp"
+        android:layout_marginBottom="10dp"
+        android:layout_above="@+id/locationButton"
         />
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/startButton"
+        android:id="@+id/locationButton"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:background="@color/colorAccent"
         android:text="Where"
         android:textColor="@color/colorTextIcons"
-        android:layout_marginBottom="30dp"
         />
-
 
 </RelativeLayout>
