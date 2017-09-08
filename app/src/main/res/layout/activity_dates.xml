@@ -6,6 +6,14 @@
     android:layout_height="match_parent"
     tools:context="compioneerx1.github.whattopack.DatesActivity">
 
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:id="@+id/imageView"
+        android:src="@drawable/background"
+        android:scaleType="centerCrop"
+        />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -13,6 +21,32 @@
         android:id="@+id/locationTextView"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
+        android:textColor="@color/colorTextIcons"
+        android:textSize="40sp"
+        />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/datesEditText"
+        android:background="@color/colorTextIcons"
+        android:hint="Enter Your Travel Dates"
+        android:layout_centerHorizontal="true"
+        android:padding="5dp"
+        android:layout_marginBottom="10dp"
+        android:layout_above="@+id/datesButton"
+        />
+
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/datesButton"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:background="@color/colorAccent"
+        android:text="When"
+        android:textColor="@color/colorTextIcons"
         />
 
 

@@ -47,7 +47,7 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:background="@color/colorAccent"
-        android:text="Let's Go!"
+        android:text="Where"
         android:textColor="@color/colorTextIcons"
         />
 
