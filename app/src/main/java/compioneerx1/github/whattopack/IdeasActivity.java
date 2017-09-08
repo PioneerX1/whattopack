@@ -13,10 +13,14 @@ public class IdeasActivity extends AppCompatActivity {
     ListView mIdeaListView;
 
     private String[] ideaPlaces = new String[] {
-            "Venice, Italy", "Buenos Aires, Argentina", "Reyjkavik, Iceland", "San Diego, CA"
+            "Venice, Italy", "Buenos Aires, Argentina", "Reyjkavik, Iceland", "San Diego, CA", "Osaka, Japan",
+            "Kenya, Africa", "Chernobyl, Russia", "Chicago, IL", "Miami, FL", "Mars", "The Moon",
+            "Kentucky"
     };
     private String[] ideaActivities = new String[] {
-            "Gondola rides", "Museums", "Arctic trek", "Relaxing by the Beach"
+            "Gondola cruising", "Museum touring", "Arctic treking", "Relaxing by the Beach", "Dolphin clubbing",
+            "Lion hunting", "Nuclear dumpster diving", "Hot dog eating contests", "Hurricane watching", "Terraforming", "Crater rolling",
+            "Cave spelunking"
     };
 
 
@@ -27,6 +31,8 @@ public class IdeasActivity extends AppCompatActivity {
         setContentView(R.layout.activity_ideas);
         ButterKnife.bind(this);
 
+        IdeasArrayAdapter adapter = new IdeasArrayAdapter(this, android.R.layout.simple_list_item_1, ideaPlaces, ideaActivities);
 
+        mIdeaListView.setAdapter(adapter);
     }
 }
