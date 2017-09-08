@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="compioneerx1.github.whattopack.LocationActivity">
-
+    tools:context="compioneerx1.github.whattopack.PurposeActivity">
 
     <ImageView
         android:layout_width="wrap_content"
@@ -18,40 +17,44 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="What's Your Destination?"
+        android:text="What is the Purpose of Your Trip?"
         android:textAlignment="center"
-        android:id="@+id/locationTextView"
+        android:id="@+id/purposeTextView"
         android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
+        android:layout_marginTop="40dp"
         android:textColor="@color/colorTextIcons"
         android:textSize="40sp"
         android:background="@color/colorPrimary"
         android:alpha="0.9"
         />
 
-    <EditText
-        android:layout_width="wrap_content"
+    <ListView
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/locationEditText"
-        android:background="@color/colorTextIcons"
-        android:hint="Enter Your Destination"
-        android:layout_centerHorizontal="true"
-        android:padding="5dp"
-        android:layout_marginBottom="30dp"
-        android:layout_above="@+id/locationButton"
+        android:id="@+id/purposeListView"
+
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:background="@color/colorPrimaryLight"
+        android:layout_above="@+id/purposeButton"
+        android:layout_marginBottom="100dp"
+
         />
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/locationButton"
+        android:id="@+id/purposeButton"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:background="@color/colorAccent"
-        android:text="Where"
+        android:text="Why"
         android:textColor="@color/colorTextIcons"
         android:layout_marginBottom="30dp"
         android:textSize="20dp"
         />
+
+
+
 
 </RelativeLayout>

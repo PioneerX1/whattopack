@@ -10,9 +10,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import butterknife.Bind;
 import butterknife.ButterKnife;
+
 public class DatesActivity extends AppCompatActivity {
 
     @Bind(R.id.locationTextView) TextView mLocationTextView;
@@ -36,7 +36,7 @@ public class DatesActivity extends AppCompatActivity {
                     Toast.makeText(DatesActivity.this, "Please enter a date.", Toast.LENGTH_LONG).show();
 
                 } else {
-                    Intent newIntent = new Intent(DatesActivity.this, ResultsActivity.class);
+                    Intent newIntent = new Intent(DatesActivity.this, PurposeActivity.class);
                     newIntent.putExtra("dates", dates);
                     newIntent.putExtra("location", location);
                     startActivity(newIntent);

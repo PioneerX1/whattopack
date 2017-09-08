@@ -24,6 +24,8 @@
         android:layout_centerVertical="true"
         android:textColor="@color/colorTextIcons"
         android:textSize="40sp"
+        android:background="@color/colorPrimary"
+        android:alpha="0.9"
         />
 
     <EditText

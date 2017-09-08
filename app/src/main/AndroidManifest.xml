@@ -21,20 +21,22 @@
         <activity android:name=".DatesActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="compioneerx1.github.whattopack.MainActivity">
-            </meta-data>
+                android:value="compioneerx1.github.whattopack.MainActivity"></meta-data>
         </activity>
         <activity android:name=".LocationActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="compioneerx1.github.whattopack.MainActivity">
-            </meta-data>
+                android:value="compioneerx1.github.whattopack.MainActivity"></meta-data>
         </activity>
         <activity android:name=".ResultsActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="compioneerx1.github.whattopack.MainActivity">
-            </meta-data>
+                android:value="compioneerx1.github.whattopack.MainActivity"></meta-data>
+        </activity>
+        <activity android:name=".PurposeActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="compioneerx1.github.whattopack.MainActivity"></meta-data>
         </activity>
     </application>
 
