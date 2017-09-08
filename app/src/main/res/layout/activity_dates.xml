@@ -17,7 +17,8 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Traveling to "
+        android:text="What Dates Are You Traveling?"
+        android:textAlignment="center"
         android:id="@+id/locationTextView"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
@@ -33,7 +34,7 @@
         android:hint="Enter Your Travel Dates"
         android:layout_centerHorizontal="true"
         android:padding="5dp"
-        android:layout_marginBottom="10dp"
+        android:layout_marginBottom="30dp"
         android:layout_above="@+id/datesButton"
         />
 
@@ -47,6 +48,8 @@
         android:background="@color/colorAccent"
         android:text="When"
         android:textColor="@color/colorTextIcons"
+        android:layout_marginBottom="30dp"
+        android:textSize="20dp"
         />
 
 

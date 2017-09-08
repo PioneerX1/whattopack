@@ -18,14 +18,13 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
+        android:text="What's Your Destination?"
+        android:textAlignment="center"
+        android:id="@+id/locationTextView"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="35dp"
-        android:text="What To Pack"
+        android:layout_centerVertical="true"
         android:textColor="@color/colorTextIcons"
-        android:textSize="60sp"
-        android:textStyle="bold"
-        android:id="@+id/appNameTextView"
+        android:textSize="40sp"
         />
 
     <EditText
@@ -36,7 +35,7 @@
         android:hint="Enter Your Destination"
         android:layout_centerHorizontal="true"
         android:padding="5dp"
-        android:layout_marginBottom="10dp"
+        android:layout_marginBottom="30dp"
         android:layout_above="@+id/locationButton"
         />
 
@@ -49,6 +48,8 @@
         android:background="@color/colorAccent"
         android:text="Where"
         android:textColor="@color/colorTextIcons"
+        android:layout_marginBottom="30dp"
+        android:textSize="20dp"
         />
 
 </RelativeLayout>

@@ -47,8 +47,9 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:background="@color/colorAccent"
-        android:text="Where"
+        android:text="Let's Go Already!"
         android:textColor="@color/colorTextIcons"
+        android:textSize="20dp"
         android:layout_marginBottom="30dp"
         />
 
