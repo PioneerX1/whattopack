@@ -29,9 +29,13 @@ public class LocationActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String location = mLocationEditText.getText().toString();
-                Intent intent = new Intent(LocationActivity.this, DatesActivity.class);
-                intent.putExtra("location", location);
-                startActivity(intent);
+                if (location.equals("")) {
+                    Toast.makeText(LocationActivity.this, "Please input a location", Toast.LENGTH_LONG).show();
+                } else {
+                    Intent intent = new Intent(LocationActivity.this, DatesActivity.class);
+                    intent.putExtra("location", location);
+                    startActivity(intent);
+                }
             }
         });
 

@@ -32,10 +32,15 @@ public class DatesActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String dates = mDatesEditText.getText().toString();
-                Intent newIntent = new Intent(DatesActivity.this, ResultsActivity.class);
-                newIntent.putExtra("dates", dates);
-                newIntent.putExtra("location", location);
-                startActivity(newIntent);
+                if (dates.equals("")) {
+                    Toast.makeText(DatesActivity.this, "Please enter a date.", Toast.LENGTH_LONG).show();
+
+                } else {
+                    Intent newIntent = new Intent(DatesActivity.this, ResultsActivity.class);
+                    newIntent.putExtra("dates", dates);
+                    newIntent.putExtra("location", location);
+                    startActivity(newIntent);
+                }
             }
         });
 
