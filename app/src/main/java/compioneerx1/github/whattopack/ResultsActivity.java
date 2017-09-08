@@ -28,7 +28,7 @@ public class ResultsActivity extends AppCompatActivity {
         String location = oldIntent.getStringExtra("location");
         String dates = oldIntent.getStringExtra("dates");
         String purpose = oldIntent.getStringExtra("purpose");
-        mInputSummaryTextView.setText("Location Specified: " + location + "\n" + "Dates Specified: " + dates + "Purpose: " + purpose);
+        mInputSummaryTextView.setText("Location Specified: " + location + "\n" + "Dates Specified: " + dates + "\n"+ "Purpose: " + purpose);
 
     }
 }
