@@ -16,9 +16,6 @@ import butterknife.ButterKnife;
 
 public class LocationActivity extends AppCompatActivity {
 
-    public static final String TAG = MainActivity.class.getSimpleName();
-
-    //@Bind(R.id.appNameTextView) TextView mAppNameTextView;
     @Bind(R.id.locationButton) Button mLocationButton;
     @Bind(R.id.locationEditText) EditText mLocationEditText;
 
@@ -27,10 +24,6 @@ public class LocationActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_location);
         ButterKnife.bind(this);
-
-        //Custom font text for "What To Pack"
-//        Typeface pacificoFont = Typeface.createFromAsset(getAssets(), "fonts/pacifico.ttf");
-//        mAppNameTextView.setTypeface(pacificoFont);
 
         mLocationButton.setOnClickListener(new View.OnClickListener() {
             @Override

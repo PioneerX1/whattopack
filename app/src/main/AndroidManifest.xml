@@ -17,7 +17,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".DatesActivity" />
-        <activity android:name=".LocationActivity"></activity>
+        <activity android:name=".LocationActivity" />
+        <activity android:name=".ResultsActivity"></activity>
     </application>
 
 </manifest>
