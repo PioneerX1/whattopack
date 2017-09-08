@@ -11,20 +11,27 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import butterknife.Bind;
+import butterknife.ButterKnife;
+
 public class MainActivity extends AppCompatActivity {
 
     public static final String TAG = MainActivity.class.getSimpleName();
-    private TextView mAppNameTextView;   // for custom font
-    private Button mLocationButton;
-    private EditText mLocationEditText;
+
+    @Bind(R.id.appNameTextView) TextView mAppNameTextView;
+    @Bind(R.id.locationButton) Button mLocationButton;
+    @Bind(R.id.locationEditText) EditText mLocationEditText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        ButterKnife.bind(this);
 
-        mLocationEditText = (EditText) findViewById(R.id.locationEditText);
-        mLocationButton = (Button) findViewById(R.id.locationButton);
+        //Custom font text for "What To Pack"
+        Typeface pacificoFont = Typeface.createFromAsset(getAssets(), "fonts/pacifico.ttf");
+        mAppNameTextView.setTypeface(pacificoFont);
+
         mLocationButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -35,10 +42,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        //Custom font text for "What To Pack"
-        mAppNameTextView = (TextView) findViewById(R.id.appNameTextView);
-        Typeface pacificoFont = Typeface.createFromAsset(getAssets(), "fonts/pacifico.ttf");
-        mAppNameTextView.setTypeface(pacificoFont);
     }
 
 
