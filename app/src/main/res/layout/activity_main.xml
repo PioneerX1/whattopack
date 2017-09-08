@@ -13,7 +13,6 @@
         android:id="@+id/imageView"
         android:src="@drawable/background"
         android:scaleType="centerCrop"
-
         />
 
     <TextView
@@ -27,7 +26,30 @@
         android:textSize="60sp"
         android:textStyle="bold"
         android:id="@+id/appNameTextView"
-
         />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/locationEditText"
+        android:background="@color/colorTextIcons"
+        android:hint="Enter Your Destination"
+        android:layout_centerHorizontal="true"
+        android:padding="5dp"
+        android:layout_marginBottom="10dp"
+        android:layout_above="@+id/locationButton"
+        />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/locationButton"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:background="@color/colorAccent"
+        android:text="Let's Go!"
+        android:textColor="@color/colorTextIcons"
+        />
+
 
 </RelativeLayout>
