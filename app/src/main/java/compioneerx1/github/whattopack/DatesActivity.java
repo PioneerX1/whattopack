@@ -25,7 +25,7 @@ public class DatesActivity extends AppCompatActivity {
         setContentView(R.layout.activity_dates);
         ButterKnife.bind(this);
         Intent oldIntent = getIntent();
-        String location = oldIntent.getStringExtra("location");
+        final String location = oldIntent.getStringExtra("location");
         mLocationTextView.setText("What dates are you traveling to " + location + "?");
 
         mDatesButton.setOnClickListener(new View.OnClickListener() {
@@ -34,6 +34,7 @@ public class DatesActivity extends AppCompatActivity {
                 String dates = mDatesEditText.getText().toString();
                 Intent newIntent = new Intent(DatesActivity.this, ResultsActivity.class);
                 newIntent.putExtra("dates", dates);
+                newIntent.putExtra("location", location);
                 startActivity(newIntent);
             }
         });
