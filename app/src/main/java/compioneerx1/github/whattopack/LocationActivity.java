@@ -14,7 +14,7 @@ import android.widget.Toast;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-public class LocationActivity extends AppCompatActivity {
+public class LocationActivity extends AppCompatActivity implements View.OnClickListener {
 
     @Bind(R.id.locationButton) Button mLocationButton;
     @Bind(R.id.locationEditText) EditText mLocationEditText;
@@ -26,27 +26,24 @@ public class LocationActivity extends AppCompatActivity {
         setContentView(R.layout.activity_location);
         ButterKnife.bind(this);
 
-        mLocationButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String location = mLocationEditText.getText().toString();
-                if (location.equals("")) {
-                    Toast.makeText(LocationActivity.this, "Please input a location", Toast.LENGTH_LONG).show();
-                } else {
-                    Intent intent = new Intent(LocationActivity.this, DatesActivity.class);
-                    intent.putExtra("location", location);
-                    startActivity(intent);
-                }
-            }
-        });
+        mLocationButton.setOnClickListener(this);
+        mIdeasButton.setOnClickListener(this);
+    }
 
-        mIdeasButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(LocationActivity.this, IdeasActivity.class);
+    @Override
+    public void onClick(View v) {
+        if (v == mLocationButton) {
+            String location = mLocationEditText.getText().toString();
+            if (location.equals("")) {
+                Toast.makeText(LocationActivity.this, "Please input a location", Toast.LENGTH_LONG).show();
+            } else {
+                Intent intent = new Intent(LocationActivity.this, DatesActivity.class);
+                intent.putExtra("location", location);
                 startActivity(intent);
             }
-        });
-
+        } else if (v == mIdeasButton) {
+            Intent intent = new Intent(LocationActivity.this, IdeasActivity.class);
+            startActivity(intent);
+        }
     }
 }
