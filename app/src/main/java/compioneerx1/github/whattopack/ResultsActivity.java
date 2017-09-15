@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -28,6 +29,7 @@ public class ResultsActivity extends AppCompatActivity {
     public static final String TAG = ResultsActivity.class.getSimpleName();
 
     @Bind(R.id.inputSummaryTextView) TextView mInputSummaryTextView;
+    @Bind(R.id.forecastListView) ListView mForecastListView;
 
     public ArrayList<DailyForecast> mForecasts = new ArrayList<>();
 
@@ -70,7 +72,7 @@ public class ResultsActivity extends AppCompatActivity {
                             forecastPreviews[i] = mForecasts.get(i).getDate();  // might need more than date here, conditions?
                         }
                         ArrayAdapter adapter = new ArrayAdapter(ResultsActivity.this, android.R.layout.simple_list_item_1, forecastPreviews);
-
+                        mForecastListView.setAdapter(adapter);
                     }
                 });
 
