@@ -49,13 +49,26 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/startButton"
-        android:layout_alignParentBottom="true"
+        android:layout_above="@+id/githubButton"
         android:layout_centerHorizontal="true"
         android:background="@color/colorAccent"
         android:text="Let's Go Already!"
         android:textColor="@color/colorTextIcons"
-        android:textSize="20dp"
+        android:textSize="20sp"
+        android:layout_marginBottom="10dp"
+        />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/githubButton"
+        android:layout_alignParentBottom="true"
+        android:text="View Developer's Code on GitHub"
+        android:layout_centerHorizontal="true"
+        android:background="@color/colorDivider"
+        android:textColor="@color/colorTextIcons"
         android:layout_marginBottom="30dp"
+        android:textSize="20sp"
         />
 
 

@@ -47,10 +47,11 @@
         android:layout_height="wrap_content"
         android:layout_above="@+id/ideasButton"
         android:layout_centerHorizontal="true"
+        android:layout_marginBottom="10dp"
         android:background="@color/colorAccent"
         android:text="Where"
         android:textColor="@color/colorTextIcons"
-        android:textSize="20dp" />
+        android:textSize="20sp" />
 
     <Button
         android:layout_width="match_parent"
@@ -62,7 +63,7 @@
         android:text="Need Ideas?"
         android:textColor="@color/colorTextIcons"
         android:layout_marginBottom="30dp"
-        android:textSize="20dp"
+        android:textSize="20sp"
         />
 
 </RelativeLayout>

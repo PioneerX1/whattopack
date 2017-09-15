@@ -60,6 +60,7 @@ public class ForecastListAdapter extends RecyclerView.Adapter<ForecastListAdapte
         }
 
         public void bindForecast(DailyForecast forecast) {
+            // spot for Picasso image loading
             mDateTextView.setText(forecast.getDate());
             mConditionsTextView.setText(forecast.getConditions());
             mRecommendationTextView.setText("This is where the recommendation will go.");
