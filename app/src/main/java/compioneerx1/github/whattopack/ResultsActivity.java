@@ -59,7 +59,7 @@ public class ResultsActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call call, Response response) throws IOException {
                 if (response.isSuccessful()) {
-                    //mForecasts = openWeatherService.processResults(response);
+                    mForecasts = openWeatherService.processResults(response);
                 }
             }
 
