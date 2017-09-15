@@ -18,15 +18,25 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Location, Purpose, &amp; Dates Summary"
+        android:text="Forecast: Next 17 Days"
         android:textAlignment="center"
         android:id="@+id/inputSummaryTextView"
         android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
+        android:layout_marginTop="10dp"
         android:textColor="@color/colorTextIcons"
         android:textSize="30sp"
         android:background="@color/colorPrimary"
         android:alpha="0.9"
         />
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/forecastListView"
+        android:layout_below="@+id/inputSummaryTextView"
+        android:layout_marginTop="10dp"
+        />
+
+
 
 </RelativeLayout>

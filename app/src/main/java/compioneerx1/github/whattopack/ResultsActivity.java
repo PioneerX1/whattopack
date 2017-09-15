@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -57,10 +58,22 @@ public class ResultsActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onResponse(Call call, Response response) throws IOException {
-                if (response.isSuccessful()) {
-                    mForecasts = openWeatherService.processResults(response);
-                }
+            public void onResponse(Call call, Response response) {
+
+                mForecasts = openWeatherService.processResults(response);
+                ResultsActivity.this.runOnUiThread(new Runnable() {
+
+                    @Override
+                    public void run() {
+                        String[] forecastPreviews = new String[mForecasts.size()];
+                        for (int i = 0; i < forecastPreviews.length; i++) {
+                            forecastPreviews[i] = mForecasts.get(i).getDate();  // might need more than date here, conditions?
+                        }
+                        ArrayAdapter adapter = new ArrayAdapter(ResultsActivity.this, android.R.layout.simple_list_item_1, forecastPreviews);
+
+                    }
+                });
+
             }
 
         });
