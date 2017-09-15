@@ -1,4 +1,4 @@
-package compioneerx1.github.whattopack;
+package compioneerx1.github.whattopack.ui;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -6,6 +6,8 @@ import android.widget.ListView;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import compioneerx1.github.whattopack.adapters.IdeasArrayAdapter;
+import compioneerx1.github.whattopack.R;
 
 public class IdeasActivity extends AppCompatActivity {
 

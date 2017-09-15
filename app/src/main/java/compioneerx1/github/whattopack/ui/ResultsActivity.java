@@ -1,23 +1,18 @@
-package compioneerx1.github.whattopack;
+package compioneerx1.github.whattopack.ui;
 
 import android.content.Intent;
-import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.View;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.io.IOException;
 import java.util.ArrayList;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import compioneerx1.github.whattopack.R;
 import compioneerx1.github.whattopack.models.DailyForecast;
 import compioneerx1.github.whattopack.services.OpenWeatherService;
 import okhttp3.Call;

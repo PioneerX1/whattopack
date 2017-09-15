@@ -1,4 +1,4 @@
-package compioneerx1.github.whattopack;
+package compioneerx1.github.whattopack.adapters;
 
 
 import android.content.Context;
