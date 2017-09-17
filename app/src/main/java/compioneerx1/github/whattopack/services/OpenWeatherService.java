@@ -47,11 +47,7 @@ public class OpenWeatherService {
 
                     // grab Unix date string, convert to Long, convert to normal format string
                     String date = forecastJSON.getString("dt");
-                    long unixDate = Long.parseLong(date);
-                    Date newDate = new Date(unixDate * 1000);  // convert seconds to milliseconds
-                    SimpleDateFormat sdf = new SimpleDateFormat("EEEE, MM/dd/yyyy");
-                    sdf.setTimeZone(TimeZone.getDefault());
-                    String formattedDate = sdf.format(newDate);
+                    String formattedDate = formatDate(date);
 
                     // other member variables of forecast object
                     String lowTemp = forecastJSON.getJSONObject("temp").getString("min");
@@ -83,6 +79,16 @@ public class OpenWeatherService {
             Log.v(TAG, "----");
         }
         return forecasts;
+    }
+
+    // format the date for DailyForecast object
+    public String formatDate(String date) {
+        long unixDate = Long.parseLong(date);
+        Date newDate = new Date(unixDate * 1000);  // convert seconds to milliseconds
+        SimpleDateFormat sdf = new SimpleDateFormat("EEEE, MM/dd/yyyy");
+        sdf.setTimeZone(TimeZone.getDefault());
+        String formattedDate = sdf.format(newDate);
+        return formattedDate;
     }
 
 
