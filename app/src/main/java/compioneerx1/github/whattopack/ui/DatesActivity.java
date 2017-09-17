@@ -12,6 +12,8 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 import compioneerx1.github.whattopack.R;
 
+// NOTE: This DatesActivity will be deactivated soon, deciding to just provide a 17 day forecast instead of making user submit another step
+
 public class DatesActivity extends AppCompatActivity {
 
     @Bind(R.id.locationTextView) TextView mLocationTextView;

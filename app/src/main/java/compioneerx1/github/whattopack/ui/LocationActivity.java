@@ -35,7 +35,8 @@ public class LocationActivity extends AppCompatActivity implements View.OnClickL
             if (location.equals("")) {
                 Toast.makeText(LocationActivity.this, "Please input a location", Toast.LENGTH_LONG).show();
             } else {
-                Intent intent = new Intent(LocationActivity.this, DatesActivity.class);
+                //Intent intent = new Intent(LocationActivity.this, DatesActivity.class);
+                Intent intent = new Intent(LocationActivity.this, PurposeActivity.class);
                 intent.putExtra("location", location);
                 startActivity(intent);
             }

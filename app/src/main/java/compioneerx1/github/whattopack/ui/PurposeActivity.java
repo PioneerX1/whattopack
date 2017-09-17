@@ -33,7 +33,7 @@ public class PurposeActivity extends AppCompatActivity {
 
         Intent oldIntent = getIntent();
         final String location = oldIntent.getStringExtra("location");
-        final String dates = oldIntent.getStringExtra("dates");
+        //final String dates = oldIntent.getStringExtra("dates");
 
         ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, purposeArray);
         mPurposeListView.setAdapter(adapter);
@@ -52,7 +52,7 @@ public class PurposeActivity extends AppCompatActivity {
                     Toast.makeText(PurposeActivity.this, "Please choose an option", Toast.LENGTH_LONG).show();
                 } else {
                     Intent newIntent = new Intent(PurposeActivity.this, ResultsActivity.class);
-                    newIntent.putExtra("dates", dates);
+                    //newIntent.putExtra("dates", dates);
                     newIntent.putExtra("location", location);
                     newIntent.putExtra("purpose", purposeSelection);
                     startActivity(newIntent);
