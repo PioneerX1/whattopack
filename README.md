@@ -27,9 +27,8 @@ You will need the following things properly installed on your computer.
 |Behavior - Plain English|Input|Output|
 |---|---|---|
 |User opens app, sees home view stating purpose of WhatToPack.|User taps button Lets Go Already to get started.|User sees Location view, where they input a location, or get ideas for places to go.|
-|User sees location view.|User inputs a location like Paris or Alaska and taps Where button.|User then sees a dates view asking for the dates they plan to travel.|
-|User sees dates view.|User inputs the dates they plan to travel and taps When button.|User then sees the purpose view, asking for their purpose of travel - business, casual, outdoor activity.|
-|User sees purpose view.|User selects their purpose and taps Why button.|User sees a summary of their input.|
+|User sees location view.|User inputs a location like Paris or Alaska and taps Where button.|User then sees the purpose view, asking for their purpose of travel - business, casual, outdoor activity.|
+|User sees purpose view.|User selects their purpose and taps Why button.|User sees a summary of their input on the results view as well as a 17-day forecast with weather conditions and recommendations of what to wear.|
 |User sees location view.|User taps Need Ideas? button.|User sees the ideas view with a list of possible places and activities.|
 
 
