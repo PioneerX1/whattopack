@@ -1,35 +1,46 @@
 package compioneerx1.github.whattopack.models;
 
 
+import compioneerx1.github.whattopack.R;
+
 public class DailyForecast {
     private String mCity;
     private String mCountry;
-
     private String mDate;  // will need to parse to Double or Long, convert from Unix, then convert to String
-    private String mLowTemp;
-    private String mHighTemp;
-    private String mHumidity;
+    private float mLowTemp;
+    private float mHighTemp;
+    private int mHumidity;
     private String mConditions;
+    private float mWindSpeed;
+    private int mCloudiness;
 
-    // other metrics we can grab, but enough for now
-    private String mWindSpeed;
-    private String mCloudiness;
+    // member variables that get created after instantiation
+    //private String mIconPath;
+    private int mIconPath;
+
 
     public DailyForecast(String city, String country, String date, String lowTemp, String highTemp,
                          String humidity, String conditions, String windSpeed, String cloudiness) {
         this.mCity = city;
         this.mCountry = country;
         this.mDate = date;
-        this.mLowTemp = lowTemp;
-        this.mHighTemp = highTemp;
-        this.mHumidity = humidity;
+        this.mLowTemp = Float.parseFloat(lowTemp);
+        this.mHighTemp = Float.parseFloat(highTemp);
+        this.mHumidity = Integer.parseInt(humidity);
         this.mConditions = conditions;
-        this.mWindSpeed = windSpeed;
-        this.mCloudiness = cloudiness;
+        this.mWindSpeed = Float.parseFloat(windSpeed);
+        this.mCloudiness = Integer.parseInt(cloudiness);
+
+        createIconPath();
 
     }
 
-    public void buildRecommendation() {
+    public void createIconPath() {
+        if (this.mConditions.contains("rain")) {
+            mIconPath = R.drawable.rain;
+        } else {
+            mIconPath = R.drawable.sun;
+        }
 
     }
 
@@ -47,15 +58,15 @@ public class DailyForecast {
         return mDate;
     }
 
-    public String getLowTemp() {
+    public float getLowTemp() {
         return mLowTemp;
     }
 
-    public String getHighTemp() {
+    public float getHighTemp() {
         return mHighTemp;
     }
 
-    public String getHumidity() {
+    public int getHumidity() {
         return mHumidity;
     }
 
@@ -63,8 +74,11 @@ public class DailyForecast {
         return mConditions;
     }
 
-    public String getWindSpeed() { return mWindSpeed; }
+    public float getWindSpeed() { return mWindSpeed; }
 
-    public String getCloudiness() { return mCloudiness; }
+    public int getCloudiness() { return mCloudiness; }
+
+
+    public int getIconPath() { return mIconPath; }
 
 }
