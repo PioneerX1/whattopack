@@ -55,9 +55,12 @@ public class OpenWeatherService {
                     String humidity = forecastJSON.getString("humidity");
                     JSONArray weatherDetailsJSON = forecastJSON.getJSONArray("weather");
                     String conditions = weatherDetailsJSON.getJSONObject(0).getString("description");
+                    String windSpeed = forecastJSON.getString("speed");
+                    String cloudiness = forecastJSON.getString("clouds");
 
                     // create new daily forecast object, add it to ArrayList of daily forecasts
-                    DailyForecast newForecast = new DailyForecast(city, country, formattedDate, lowTemp, highTemp, humidity, conditions);
+                    DailyForecast newForecast = new DailyForecast(city, country, formattedDate, lowTemp, highTemp,
+                            humidity, conditions, windSpeed, cloudiness);
                     forecasts.add(newForecast);
                 }
             }
@@ -76,6 +79,8 @@ public class OpenWeatherService {
             Log.v(TAG, "HIGH TEMP: " + forecasts.get(k).getHighTemp());
             Log.v(TAG, "HUMIDITY: " + forecasts.get(k).getHumidity() + "%");
             Log.v(TAG, "CONDITIONS: " + forecasts.get(k).getConditions());
+            Log.v(TAG, "WIND SPEED: " + forecasts.get(k).getWindSpeed());
+            Log.v(TAG, "CLOUDINESS: " + forecasts.get(k).getCloudiness());
             Log.v(TAG, "----");
         }
         return forecasts;

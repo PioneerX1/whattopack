@@ -12,8 +12,11 @@ public class DailyForecast {
     private String mConditions;
 
     // other metrics we can grab, but enough for now
+    private String mWindSpeed;
+    private String mCloudiness;
 
-    public DailyForecast(String city, String country, String date, String lowTemp, String highTemp, String humidity, String conditions) {
+    public DailyForecast(String city, String country, String date, String lowTemp, String highTemp,
+                         String humidity, String conditions, String windSpeed, String cloudiness) {
         this.mCity = city;
         this.mCountry = country;
         this.mDate = date;
@@ -21,6 +24,13 @@ public class DailyForecast {
         this.mHighTemp = highTemp;
         this.mHumidity = humidity;
         this.mConditions = conditions;
+        this.mWindSpeed = windSpeed;
+        this.mCloudiness = cloudiness;
+
+    }
+
+    public void buildRecommendation() {
+
     }
 
     // Getter Methods
@@ -52,5 +62,9 @@ public class DailyForecast {
     public String getConditions() {
         return mConditions;
     }
+
+    public String getWindSpeed() { return mWindSpeed; }
+
+    public String getCloudiness() { return mCloudiness; }
 
 }
