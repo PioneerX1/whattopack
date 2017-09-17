@@ -65,7 +65,7 @@ public class ForecastListAdapter extends RecyclerView.Adapter<ForecastListAdapte
             //mWeatherImageView.setImageResource(R.drawable.rain);
             mDateTextView.setText(forecast.getDate());
             mConditionsTextView.setText(forecast.getConditions());
-            mRecommendationTextView.setText("This is where the recommendation will go.");
+            mRecommendationTextView.setText(forecast.getRecommendation());  // THIS IS NOT SHOWING!! ASYNCHRONOUS ISSUE??
         }
 
     }
