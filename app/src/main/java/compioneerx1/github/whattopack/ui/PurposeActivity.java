@@ -42,6 +42,7 @@ public class PurposeActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 purposeSelection = ((TextView)view).getText().toString();
+                Toast.makeText(PurposeActivity.this, purposeSelection + " specified", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -49,7 +50,7 @@ public class PurposeActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (purposeSelection.equals("")) {
-                    Toast.makeText(PurposeActivity.this, "Please choose an option", Toast.LENGTH_LONG).show();
+                    Toast.makeText(PurposeActivity.this, "Please choose an option", Toast.LENGTH_SHORT).show();
                 } else {
                     Intent newIntent = new Intent(PurposeActivity.this, ResultsActivity.class);
                     //newIntent.putExtra("dates", dates);
