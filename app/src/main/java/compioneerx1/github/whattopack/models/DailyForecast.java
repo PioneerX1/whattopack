@@ -16,7 +16,8 @@ public class DailyForecast {
 
     // member variables that get created after instantiation
     private int mIconPath;  // looks like Android reads the file path as an int, not a String
-    private String mRecommendation = "";
+    //private String mRecommendation = "";
+    private String mRecommendation;
 
 
     public DailyForecast(String city, String country, String date, String lowTemp, String highTemp,
@@ -37,11 +38,13 @@ public class DailyForecast {
     }
 
     public void createRecommendation() {
-        
+
         if (this.mConditions.contains("rain")) {
-            mRecommendation.equals(mRecommendation.concat("Rain Jacket for " + this.getConditions()));
+            //mRecommendation.equals(mRecommendation.concat("Rain Jacket for " + this.getConditions()));
+            mRecommendation = "Rain Jacket for " + this.getConditions();
         } else {
-            mRecommendation.equals(mRecommendation.concat("Wear whatever man, just go for it"));
+            //mRecommendation.equals(mRecommendation.concat("Wear whatever man, just go for it"));
+            mRecommendation = "SUN, wear whatever MAN!";
         }
     }
 

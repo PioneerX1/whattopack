@@ -81,6 +81,7 @@ public class OpenWeatherService {
             Log.v(TAG, "CONDITIONS: " + forecasts.get(k).getConditions());
             Log.v(TAG, "WIND SPEED: " + forecasts.get(k).getWindSpeed());
             Log.v(TAG, "CLOUDINESS: " + forecasts.get(k).getCloudiness());
+            Log.v(TAG, "RECOMMENDATION: " + forecasts.get(k).getRecommendation());
             Log.v(TAG, "----");
         }
         return forecasts;
