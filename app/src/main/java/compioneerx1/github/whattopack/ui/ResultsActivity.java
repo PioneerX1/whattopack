@@ -1,6 +1,8 @@
 package compioneerx1.github.whattopack.ui;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -38,10 +40,11 @@ import okhttp3.Response;
 
 public class ResultsActivity extends AppCompatActivity implements View.OnClickListener {
 
+    private SharedPreferences mSharedPreferences;
+    private String mRecentLocation;
+
     private DatabaseReference mSavedTripReference;
     private ValueEventListener mSavedTripReferenceListener;
-
-    private Trip mTrip;  // just added
 
     public static final String TAG = ResultsActivity.class.getSimpleName();
 
@@ -64,10 +67,12 @@ public class ResultsActivity extends AppCompatActivity implements View.OnClickLi
         ButterKnife.bind(this);
 
         Intent oldIntent = getIntent();
-        final String location = oldIntent.getStringExtra("location");
+//        final String location = oldIntent.getStringExtra("location");
         final String purpose = oldIntent.getStringExtra("purpose");
+        mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        mRecentLocation = mSharedPreferences.getString(Constants.PREFERENCES_LOCATION_KEY, null);
 
-        saveLocation = location;
+        saveLocation = mRecentLocation;
         savePurpose = purpose;
 
         mSavedTripReference = FirebaseDatabase
@@ -89,9 +94,11 @@ public class ResultsActivity extends AppCompatActivity implements View.OnClickLi
             }
         });
 
-        getWeather(location);
+        if (mRecentLocation != null) {
+            getWeather(mRecentLocation);
+        }
 
-        mInputSummaryTextView.setText("Location: " + location + "\n"+ "Purpose: " + purpose);
+        mInputSummaryTextView.setText("Location: " + mRecentLocation + "\n"+ "Purpose: " + purpose);
         mSaveTripButton.setOnClickListener(this);
 
     }

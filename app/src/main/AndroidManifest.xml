@@ -27,12 +27,12 @@
         <activity android:name=".ui.ResultsActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="compioneerx1.github.whattopack.ui.MainActivity" />
+                android:value="compioneerx1.github.whattopack.ui.LocationActivity" />
         </activity>
         <activity android:name=".ui.PurposeActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="compioneerx1.github.whattopack.ui.MainActivity" />
+                android:value="compioneerx1.github.whattopack.ui.LocationActivity" />
         </activity>
         <activity android:name=".ui.IdeasActivity">
             <meta-data
