@@ -132,9 +132,6 @@ public class ResultsActivity extends AppCompatActivity implements View.OnClickLi
     }
 
     private void saveTrip() {
-
-
-
         Trip newTrip = new Trip(saveLocation, savePurpose);
         Toast.makeText(ResultsActivity.this, "Trip Saved with Location: " + newTrip.getLocation() + ", Purpose: " + newTrip.getPurpose(), Toast.LENGTH_SHORT).show();
         mSavedTripReference.push().setValue(newTrip);

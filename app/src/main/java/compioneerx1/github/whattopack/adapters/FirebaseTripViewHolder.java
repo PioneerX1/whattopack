@@ -45,30 +45,31 @@ public class FirebaseTripViewHolder extends RecyclerView.ViewHolder implements V
 
     @Override
     public void onClick(View view) {
-        final ArrayList<Trip> trips = new ArrayList<>();
-        DatabaseReference ref = FirebaseDatabase.getInstance().getReference(Constants.FIREBASE_CHILD_TRIP);
-        ref.addListenerForSingleValueEvent(new ValueEventListener() {
-
-           @Override
-           public void onDataChange(DataSnapshot dataSnapshot) {
-               for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
-                   trips.add(snapshot.getValue(Trip.class));
-               }
-               int itemPosition = getLayoutPosition();
-
-               Intent intent = new Intent(mContext, ResultsActivity.class);  // this will need to be refactored, other wise they could save it twice
-               intent.putExtra("position", itemPosition + "");
-               intent.putExtra("trips", Parcels.wrap(trips));
-
-               mContext.startActivity(intent);
-           }
-
-           @Override
-           public void onCancelled(DatabaseError databaseError) {
-               // nothing yet
-           }
-
-        });
+        // NO REAL EVENT LISTENERS NEEDED RIGHT NOW
+//        final ArrayList<Trip> trips = new ArrayList<>();
+//        DatabaseReference ref = FirebaseDatabase.getInstance().getReference(Constants.FIREBASE_CHILD_TRIP);
+//        ref.addListenerForSingleValueEvent(new ValueEventListener() {
+//
+//           @Override
+//           public void onDataChange(DataSnapshot dataSnapshot) {
+//               for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+//                   trips.add(snapshot.getValue(Trip.class));
+//               }
+//               int itemPosition = getLayoutPosition();
+//
+//               Intent intent = new Intent(mContext, ResultsActivity.class);  // this will need to be refactored, other wise they could save it twice
+//               intent.putExtra("position", itemPosition + "");
+//               intent.putExtra("trips", Parcels.wrap(trips));
+//
+//               mContext.startActivity(intent);
+//           }
+//
+//           @Override
+//           public void onCancelled(DatabaseError databaseError) {
+//               // nothing yet
+//           }
+//
+//        });
     }
 
 }
