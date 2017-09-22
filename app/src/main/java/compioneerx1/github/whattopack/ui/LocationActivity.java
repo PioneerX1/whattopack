@@ -17,6 +17,7 @@ public class LocationActivity extends AppCompatActivity implements View.OnClickL
     @Bind(R.id.locationButton) Button mLocationButton;
     @Bind(R.id.locationEditText) EditText mLocationEditText;
     @Bind(R.id.ideasButton) Button mIdeasButton;
+    @Bind(R.id.mySavedTripsButton) Button mMySavedTripsButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +27,7 @@ public class LocationActivity extends AppCompatActivity implements View.OnClickL
 
         mLocationButton.setOnClickListener(this);
         mIdeasButton.setOnClickListener(this);
+        mMySavedTripsButton.setOnClickListener(this);
     }
 
     @Override
@@ -40,7 +42,14 @@ public class LocationActivity extends AppCompatActivity implements View.OnClickL
                 intent.putExtra("location", location);
                 startActivity(intent);
             }
-        } else if (v == mIdeasButton) {
+        }
+
+        if (v == mMySavedTripsButton) {
+            Intent intent = new Intent(LocationActivity.this, SavedTripListActivity.class);
+            startActivity(intent);
+        }
+
+        if (v == mIdeasButton) {
             Intent intent = new Intent(LocationActivity.this, IdeasActivity.class);
             startActivity(intent);
         }
