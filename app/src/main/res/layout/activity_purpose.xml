@@ -48,7 +48,7 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:background="@color/colorAccent"
-        android:text="Why"
+        android:text="See Travel Wear Recommendations"
         android:textColor="@color/colorTextIcons"
         android:layout_marginBottom="30dp"
         android:textSize="20dp"
