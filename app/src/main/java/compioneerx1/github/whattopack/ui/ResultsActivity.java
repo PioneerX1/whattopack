@@ -12,11 +12,15 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 import java.io.IOException;
 import java.util.ArrayList;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import compioneerx1.github.whattopack.Constants;
 import compioneerx1.github.whattopack.R;
 import compioneerx1.github.whattopack.adapters.ForecastListAdapter;
 import compioneerx1.github.whattopack.models.DailyForecast;
@@ -27,6 +31,8 @@ import okhttp3.Callback;
 import okhttp3.Response;
 
 public class ResultsActivity extends AppCompatActivity implements View.OnClickListener {
+
+    private DatabaseReference mSavedTripReference;
 
     public static final String TAG = ResultsActivity.class.getSimpleName();
 
@@ -102,8 +108,15 @@ public class ResultsActivity extends AppCompatActivity implements View.OnClickLi
     }
 
     private void saveTrip() {
+
+        mSavedTripReference = FirebaseDatabase
+                .getInstance()
+                .getReference()
+                .child(Constants.FIREBASE_CHILD_TRIP);
+
         Trip newTrip = new Trip(saveLocation, savePurpose);
-        Toast.makeText(ResultsActivity.this, "Trip Saved!", Toast.LENGTH_SHORT).show();
+        Toast.makeText(ResultsActivity.this, "Trip Saved with Location: " + newTrip.getLocation() + ", Purpose: " + newTrip.getPurpose(), Toast.LENGTH_SHORT).show();
+        mSavedTripReference.push().setValue(newTrip);
     }
 
 
