@@ -45,7 +45,9 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="compioneerx1.github.whattopack.ui.LocationActivity" />
         </activity>
-        <activity android:name=".ui.SavedTripListActivity"></activity>
+        <activity android:name=".ui.SavedTripListActivity" />
+        <activity android:name=".ui.CreateAccountActivity" />
+        <activity android:name=".ui.LoginActivity"></activity>
     </application>
 
 </manifest>
