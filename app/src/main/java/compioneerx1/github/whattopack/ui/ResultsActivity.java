@@ -42,11 +42,10 @@ public class ResultsActivity extends AppCompatActivity {
 
         Intent oldIntent = getIntent();
         final String location = oldIntent.getStringExtra("location");
+        final String purpose = oldIntent.getStringExtra("purpose");
 
         getWeather(location);
 
-        //String dates = oldIntent.getStringExtra("dates");
-        String purpose = oldIntent.getStringExtra("purpose");
         mInputSummaryTextView.setText("Location: " + location + "\n"+ "Purpose: " + purpose);
 
     }

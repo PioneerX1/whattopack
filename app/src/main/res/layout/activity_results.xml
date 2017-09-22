@@ -33,7 +33,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/recyclerView"
-        android:layout_below="@+id/inputSummaryTextView"
+        android:layout_below="@+id/saveTripButton"
         android:layout_marginTop="10dp"
         />
 
@@ -47,5 +47,16 @@
         />
 
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/saveTripButton"
+        android:text="Save this Trip?"
+        android:textColor="@color/colorTextIcons"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/inputSummaryTextView"
+        android:background="@color/colorAccent"
+        android:textSize="20sp"
+        />
 
 </RelativeLayout>

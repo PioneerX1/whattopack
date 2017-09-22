@@ -13,6 +13,7 @@ public class Constants {
     // api.openweathermap.org/data/2.5/forecast/daily?q=seattle&cnt=17&appid=c109379d321012346a8b0e6bdea99879
     // NOTE: country parameter is not needed at all
 
+    public static final String FIREBASE_CHILD_TRIP = "trip";
 
 
 }
