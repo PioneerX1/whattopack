@@ -17,6 +17,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.UserProfileChangeRequest;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -37,6 +38,8 @@ public class CreateAccountActivity extends AppCompatActivity implements View.OnC
     @Bind(R.id.passwordEditText) EditText mPasswordEditText;
     @Bind(R.id.confirmPasswordEditText) EditText mConfirmPasswordEditText;
     @Bind(R.id.loginTextView) TextView mLoginTextView;
+
+    private String mName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,6 +70,7 @@ public class CreateAccountActivity extends AppCompatActivity implements View.OnC
     }
 
     private void createNewUser() {
+        mName = mNameEditText.getText().toString().trim();
         final String name = mNameEditText.getText().toString().trim();
         final String email = mEmailEditText.getText().toString().trim();
         String password = mPasswordEditText.getText().toString().trim();
@@ -74,7 +78,7 @@ public class CreateAccountActivity extends AppCompatActivity implements View.OnC
 
         // call on validation methods
         boolean validEmail = isValidEmail(email);
-        boolean validName = isValidName(name);
+        boolean validName = isValidName(mName);  // changed from name to mName
         boolean validPassword = isValidPassword(password, confirmPassword);
         if (!validEmail || !validName || !validPassword) return;  // halt createNewUser method, display validation errors
 
@@ -89,12 +93,32 @@ public class CreateAccountActivity extends AppCompatActivity implements View.OnC
 
                         if (task.isSuccessful()) {
                             Log.d(TAG, "Authentication successful");
+                            createFirebaseUserProfile(task.getResult().getUser());
                         } else {
                             Toast.makeText(CreateAccountActivity.this, "Authentication failed.", Toast.LENGTH_SHORT).show();
                         }
                     }
                 });
     }
+
+    // set the user's name for top of screen
+    private void createFirebaseUserProfile(final FirebaseUser user) {
+
+        UserProfileChangeRequest addProfileName = new UserProfileChangeRequest.Builder()
+                .setDisplayName(mName)
+                .build();
+        user.updateProfile(addProfileName)
+                .addOnCompleteListener(new OnCompleteListener<Void>() {
+
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        if (task.isSuccessful()) {
+                            Log.d(TAG, user.getDisplayName());
+                        }
+                    }
+                });
+    }
+
 
     // validate form fields
     private boolean isValidEmail(String email) {
