@@ -1,8 +1,13 @@
 package compioneerx1.github.whattopack.models;
 
+import org.parceler.Parcel;
+
+@Parcel
 public class Trip {
     String location;
     String purpose;
+
+    public Trip() { }
 
     public Trip(String location, String purpose) {
         this.location = location;

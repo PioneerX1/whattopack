@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -12,8 +13,11 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -33,6 +37,7 @@ import okhttp3.Response;
 public class ResultsActivity extends AppCompatActivity implements View.OnClickListener {
 
     private DatabaseReference mSavedTripReference;
+    private ValueEventListener mSavedTripReferenceListener;
 
     public static final String TAG = ResultsActivity.class.getSimpleName();
 
@@ -114,9 +119,29 @@ public class ResultsActivity extends AppCompatActivity implements View.OnClickLi
                 .getReference()
                 .child(Constants.FIREBASE_CHILD_TRIP);
 
+        mSavedTripReferenceListener = mSavedTripReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                for (DataSnapshot tripSnapshot : dataSnapshot.getChildren()) {
+                    String individualTrip = tripSnapshot.getValue().toString();
+                    Log.d("Trip updated", "individualTrip: " + individualTrip);
+                }
+            }
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+
         Trip newTrip = new Trip(saveLocation, savePurpose);
         Toast.makeText(ResultsActivity.this, "Trip Saved with Location: " + newTrip.getLocation() + ", Purpose: " + newTrip.getPurpose(), Toast.LENGTH_SHORT).show();
         mSavedTripReference.push().setValue(newTrip);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        mSavedTripReference.removeEventListener(mSavedTripReferenceListener);
     }
 
 
