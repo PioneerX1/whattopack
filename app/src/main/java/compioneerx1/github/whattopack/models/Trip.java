@@ -6,6 +6,7 @@ import org.parceler.Parcel;
 public class Trip {
     String location;
     String purpose;
+    private String pushId;
 
     public Trip() { }
 
@@ -20,6 +21,14 @@ public class Trip {
 
     public String getPurpose() {
         return purpose;
+    }
+
+    public String getPushId() {
+        return pushId;
+    }
+
+    public void setPushId(String pushId) {
+        this.pushId = pushId;
     }
 
 }

@@ -6,6 +6,8 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -29,7 +31,13 @@ public class SavedTripListActivity extends AppCompatActivity {
         setContentView(R.layout.activity_saved_trip_list);
         ButterKnife.bind(this);
 
-        mTripsReference = FirebaseDatabase.getInstance().getReference(Constants.FIREBASE_CHILD_TRIP);
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        String uid = user.getUid();
+
+        mTripsReference = FirebaseDatabase
+                .getInstance()
+                .getReference(Constants.FIREBASE_CHILD_TRIP)
+                .child(uid);
         setUpFirebaseAdapter();
     }
 

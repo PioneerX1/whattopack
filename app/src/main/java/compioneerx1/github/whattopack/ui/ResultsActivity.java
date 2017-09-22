@@ -13,6 +13,8 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -38,6 +40,8 @@ public class ResultsActivity extends AppCompatActivity implements View.OnClickLi
 
     private DatabaseReference mSavedTripReference;
     private ValueEventListener mSavedTripReferenceListener;
+
+    private Trip mTrip;  // just added
 
     public static final String TAG = ResultsActivity.class.getSimpleName();
 
@@ -134,7 +138,21 @@ public class ResultsActivity extends AppCompatActivity implements View.OnClickLi
     private void saveTrip() {
         Trip newTrip = new Trip(saveLocation, savePurpose);
         Toast.makeText(ResultsActivity.this, "Trip Saved with Location: " + newTrip.getLocation() + ", Purpose: " + newTrip.getPurpose(), Toast.LENGTH_SHORT).show();
-        mSavedTripReference.push().setValue(newTrip);
+
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        String uid = user.getUid();
+
+        DatabaseReference tripRef = FirebaseDatabase
+                .getInstance()
+                .getReference(Constants.FIREBASE_CHILD_TRIP)
+                .child(uid);
+
+        DatabaseReference pushRef = tripRef.push();
+        String pushId = pushRef.getKey();
+        newTrip.setPushId(pushId);
+        pushRef.setValue(newTrip);
+
+        //mSavedTripReference.push().setValue(newTrip);
     }
 
     @Override
