@@ -66,6 +66,25 @@ public class ResultsActivity extends AppCompatActivity implements View.OnClickLi
         saveLocation = location;
         savePurpose = purpose;
 
+        mSavedTripReference = FirebaseDatabase
+                .getInstance()
+                .getReference()
+                .child(Constants.FIREBASE_CHILD_TRIP);
+
+        mSavedTripReferenceListener = mSavedTripReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                for (DataSnapshot tripSnapshot : dataSnapshot.getChildren()) {
+                    String individualTrip = tripSnapshot.getValue().toString();
+                    Log.d("Trip updated", "individualTrip: " + individualTrip);
+                }
+            }
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+
         getWeather(location);
 
         mInputSummaryTextView.setText("Location: " + location + "\n"+ "Purpose: " + purpose);
@@ -114,24 +133,7 @@ public class ResultsActivity extends AppCompatActivity implements View.OnClickLi
 
     private void saveTrip() {
 
-        mSavedTripReference = FirebaseDatabase
-                .getInstance()
-                .getReference()
-                .child(Constants.FIREBASE_CHILD_TRIP);
 
-        mSavedTripReferenceListener = mSavedTripReference.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                for (DataSnapshot tripSnapshot : dataSnapshot.getChildren()) {
-                    String individualTrip = tripSnapshot.getValue().toString();
-                    Log.d("Trip updated", "individualTrip: " + individualTrip);
-                }
-            }
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-
-            }
-        });
 
         Trip newTrip = new Trip(saveLocation, savePurpose);
         Toast.makeText(ResultsActivity.this, "Trip Saved with Location: " + newTrip.getLocation() + ", Purpose: " + newTrip.getPurpose(), Toast.LENGTH_SHORT).show();
