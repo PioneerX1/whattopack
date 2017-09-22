@@ -22,7 +22,7 @@
         android:textAlignment="center"
         android:id="@+id/locationTextView"
         android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
+        android:layout_alignParentTop="true"
         android:textColor="@color/colorTextIcons"
         android:textSize="40sp"
         android:background="@color/colorPrimary"
@@ -36,22 +36,34 @@
         android:background="@color/colorTextIcons"
         android:hint="Enter Your Destination"
         android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
         android:padding="5dp"
-        android:layout_marginBottom="30dp"
-        android:layout_above="@+id/locationButton"
         />
 
     <Button
         android:id="@+id/locationButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/ideasButton"
+        android:layout_above="@+id/mySavedTripsButton"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="10dp"
         android:background="@color/colorAccent"
         android:text="Enter Location"
         android:textColor="@color/colorTextIcons"
         android:textSize="20sp" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/mySavedTripsButton"
+        android:layout_above="@+id/ideasButton"
+        android:layout_centerHorizontal="true"
+        android:background="@color/colorPrimary"
+        android:text="My Saved Trips"
+        android:textColor="@color/colorTextIcons"
+        android:layout_marginBottom="10dp"
+        android:textSize="20sp"
+        />
 
     <Button
         android:layout_width="match_parent"
