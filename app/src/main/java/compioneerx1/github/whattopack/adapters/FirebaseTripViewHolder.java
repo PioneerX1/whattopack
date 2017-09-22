@@ -56,7 +56,7 @@ public class FirebaseTripViewHolder extends RecyclerView.ViewHolder implements V
                }
                int itemPosition = getLayoutPosition();
 
-               Intent intent = new Intent(mContext, ResultsActivity.class);  // this will need to be refactored
+               Intent intent = new Intent(mContext, ResultsActivity.class);  // this will need to be refactored, other wise they could save it twice
                intent.putExtra("position", itemPosition + "");
                intent.putExtra("trips", Parcels.wrap(trips));
 
