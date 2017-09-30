@@ -20,13 +20,14 @@
         android:background="@color/colorPrimary"
         android:alpha="0.9"
         />
-    
-    <android.support.v7.widget.RecyclerView
+
+    <fragment
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/tripsRecyclerView"
+        android:id="@+id/fragmentTripList"
+        android:name="compioneerx1.github.whattopack.ui.TripListFragment"
+        tools:layout="@layout/fragment_trip_list"
         android:layout_below="@+id/mySavedTripsTitle"
-        android:layout_marginTop="30dp"
         />
 
 </RelativeLayout>
