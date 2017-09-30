@@ -34,6 +34,7 @@ public class TripListFragment extends Fragment implements OnStartDragListener {
     private FirebaseTripListAdapter mFirebaseAdapter;
     private ItemTouchHelper mItemTouchHelper;
 
+
     @Bind(R.id.tripsRecyclerView) RecyclerView mRecyclerView;
 
 

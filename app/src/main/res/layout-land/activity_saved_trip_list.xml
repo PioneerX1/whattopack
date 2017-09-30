@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/mySavedTripsTitle"
+        android:text="My Saved Trips"
+        android:textAlignment="center"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true"
+        android:textColor="@color/colorTextIcons"
+        android:textSize="40sp"
+        android:background="@color/colorPrimary"
+        android:alpha="0.9"
+        />
+
+    <fragment
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/fragmentTripList"
+        android:name="compioneerx1.github.whattopack.ui.TripListFragment"
+        tools:layout="@layout/fragment_trip_list"
+        android:layout_below="@+id/mySavedTripsTitle"
+        />
+
+</LinearLayout>
