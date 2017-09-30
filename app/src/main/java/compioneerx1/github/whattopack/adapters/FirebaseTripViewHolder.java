@@ -27,6 +27,7 @@ public class FirebaseTripViewHolder extends RecyclerView.ViewHolder implements V
 
     View mView;
     Context mContext;
+    public TextView mTripLocationTextView;
 
     public FirebaseTripViewHolder(View itemView) {
         super(itemView);
@@ -36,11 +37,11 @@ public class FirebaseTripViewHolder extends RecyclerView.ViewHolder implements V
     }
 
     public void bindTrip(Trip trip) {
-        TextView tripLocationTextView = (TextView) mView.findViewById(R.id.tripLocationTextView);
+        mTripLocationTextView = (TextView) mView.findViewById(R.id.tripLocationTextView);
         TextView tripPurposeTextView = (TextView) mView.findViewById(R.id.tripPurposeTextView);
 
         tripPurposeTextView.setText(trip.getPurpose());
-        tripLocationTextView.setText(trip.getLocation());
+        mTripLocationTextView.setText(trip.getLocation());
     }
 
     @Override
